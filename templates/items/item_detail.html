@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h1>{{ item.name }}</h1>
+<p>{{ item.description }}</p>
+<a href="{% url 'item_update' item.pk %}">Edit</a>
+<a href="{% url 'item_delete' item.pk %}">Delete</a>
+<div id="lottie-animation"></div>
+<script>
+    lottie.loadAnimation({
+        container: document.getElementById('lottie-animation'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: "{% static 'animations/detail-animation.json' %}"
+    });
+</script>
+
+{% endblock content %}

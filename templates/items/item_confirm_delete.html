@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<title>Delete Item</title>
+
+
+<h1>Delete {{ item.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+    </form>
+    <a href="{% url 'item_list' %}">Cancel</a>
+
+{% endblock content %}
